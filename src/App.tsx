@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux'
 
-function App() {
+import { RootState } from "store";
+import InsideBlock from "components/InsideBlock";
+import { getDateComponents } from "helpers/getDateComponents";
+import GlobalStyles from "theme/globalStyles";
+
+const App = () => {
+
+  const timezone = useSelector((state: RootState) => state.weather.data?.city?.timezone) || 0
+  const timeIndex = Math.ceil(getDateComponents(timezone).hours / 3)
+
+  const idWeatherOpen = useSelector((state: RootState) => state.weather.data?.list ? state.weather.data?.list[timeIndex].weather[0].id : null) || 0
+  const idWeatherBit = useSelector((state: RootState) => state.weather.data?.data ? state.weather.data?.data[0].weather.code : null)
+
+  const actualBgWeather = idWeatherOpen ? idWeatherOpen : idWeatherBit || 0
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <InsideBlock idWeather={actualBgWeather} />
+      <GlobalStyles />
+    </>
   );
 }
 
