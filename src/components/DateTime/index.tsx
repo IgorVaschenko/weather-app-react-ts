@@ -1,6 +1,7 @@
+import Date from 'containers/Date';
+import Time from 'containers/Time';
+
 import { DateTimeBlock } from 'components/DateTime/components';
-import Date from 'components/DateTime/Date';
-import Time from 'components/DateTime/Time';
 
 const DateTime = () => {
 

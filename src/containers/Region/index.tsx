@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from 'store'
 import { countries } from 'constants/countries'
 
-import { RegionBlock, City, Country } from 'components/Region/components'
+import { RegionBlock, City, Country } from 'containers/Region/components'
 
 const Region = () => {
     const city = useSelector((state: RootState) => state.weather.data?.city?.name)

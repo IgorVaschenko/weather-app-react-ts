@@ -5,7 +5,7 @@ import { degreeMeasure } from 'helpers/temperatureConverter'
 import { actualDegrees } from 'helpers/actualDegrees'
 import { getDateComponents } from 'helpers/getDateComponents'
 
-import { WeatherToday, IconToday, WeatherInDay, DayWeekToday, DegreesToday } from 'components/WeekWeather/Today/components'
+import { WeatherToday, IconToday, WeatherInDay, DayWeekToday, DegreesToday } from 'containers/Today/components'
 
 const Today = () => {
 

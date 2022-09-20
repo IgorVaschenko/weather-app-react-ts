@@ -1,8 +1,11 @@
-export const GET_WEATHER = 'GET_WEATHER';
-export const SET_LOADING = 'SET_LOADING';
-export const SET_ERROR = 'SET_ERROR';
-export const SET_DEGREES = 'SET_DEGREES';
-export const SET_SOURCE = 'SET_SOURCE';
+import {
+    SET_CITY,
+    GET_WEATHER,
+    SET_LOADING,
+    SET_ERROR,
+    SET_DEGREES,
+    SET_SOURCE,
+} from "constants/actions";
 
 export interface Weather {
     description: string;
@@ -31,28 +34,14 @@ export interface OpenWeather {
 }
 
 export interface WeatherData {
-    base: string;
-    cod: number;
     dt: number;
-    id: number;
     main: {
-        feels_like: number;
-        humidity: number;
-        pressure: number;
         temp: number;
-        temp_max: number;
-        temp_min: number;
     };
     name: string;
     sys: {
         country: string;
-        id: number;
-        sunrise: number;
-        sunset: number;
-        type: number;
-        message: number;
     };
-    visibility: number;
     weather: Weather[];
     data: WeatherBit[];
     city_name: string;
@@ -77,6 +66,7 @@ export interface WeatherState {
     error: string;
     degrees: boolean;
     source: boolean;
+    city: string;
 }
 
 interface GetWeatherAction {
@@ -102,9 +92,12 @@ interface SetSourceAction {
     type: typeof SET_SOURCE;
     payload: boolean;
 }
+interface SetCity {
+    type: typeof SET_CITY;
+    payload: string;
+}
 
-export type WeatherAction = GetWeatherAction | SetLoadingAction | SetErrorAction | SetDegreesAction | SetSourceAction;
-
+export type WeatherAction = GetWeatherAction | SetLoadingAction | SetErrorAction | SetDegreesAction | SetSourceAction | SetCity;
 
 export interface ToggleState {
     degrees: boolean;

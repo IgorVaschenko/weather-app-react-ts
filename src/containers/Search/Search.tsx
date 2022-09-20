@@ -2,9 +2,9 @@ import { FC, useState, FormEvent, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from 'store';
-import { getWeatherBit, getWeatherByPosition, setLoading, getOpenWeather } from 'store/actions/weatherActions';
+import { getWeatherBit, setLoading, getOpenWeather, getWeatherPosition, setCurrentCity, setError } from 'store/actions/weatherActions';
 
-import { SearchForm, SearchInput, SearchButton } from 'components/Search/components'
+import { SearchForm, SearchInput, SearchButton } from 'containers/Search/components'
 
 const Search: FC = () => {
 
@@ -16,7 +16,7 @@ const Search: FC = () => {
     const [city, setCity] = useState('')
 
     useEffect(() => {
-        navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => dispatch(getWeatherByPosition(position.coords.latitude, position.coords.longitude)))
+        dispatch(getWeatherPosition())
     }, [])
 
     useEffect(() => {
@@ -29,8 +29,10 @@ const Search: FC = () => {
 
     const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        dispatch(setCurrentCity(city))
         dispatch(setLoading())
-        dispatch(source ? getOpenWeather(city) : getWeatherBit(city))
+        dispatch(setError(''))
+        dispatch(source ? getOpenWeather() : getWeatherBit())
         setCity(city)
     }
     return (

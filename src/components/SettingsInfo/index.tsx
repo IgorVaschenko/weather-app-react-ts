@@ -1,4 +1,4 @@
-import Toggles from 'components/Toggles';
+import Toggles from 'containers/Toggles';
 import Info from 'components/Info';
 
 import { WeatherCityBlock } from 'components/SettingsInfo/components'

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import theme from "theme/theme";
 
 export const SearchForm = styled.form`
-  flex-basis: ${theme.flexBasis[6]}%;
+  flex-basis: ${theme.flexBasis[5]}%;
   height: ${theme.height[4]}px;
   margin-top: ${theme.spaces[1]}px;
   display: flex;
@@ -16,6 +16,7 @@ export const SearchInput = styled.input`
   outline: none;
   border: none;
   flex: 0 1 90%;
+  width:  ${theme.width[4]}px;
 
   &:focus {
     box-shadow: 0 0 15px #2196F3

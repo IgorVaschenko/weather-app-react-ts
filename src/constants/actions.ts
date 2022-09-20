@@ -1,4 +1,10 @@
+export const GET_WEATHER_BY_START_POSITION = 'GET_WEATHER_BY_START_POSITION';
+export const GET_OPENWEATHER = 'GET_OPENWEATHER';
+export const GET_WEATHERBIT = 'GET_WEATHERBIT';
 export const GET_WEATHER = 'GET_WEATHER';
+
+export const SET_CITY = 'SET_CITY';
+
 export const SET_LOADING = 'SET_LOADING';
 export const SET_ERROR = 'SET_ERROR';
 export const SET_DEGREES = 'SET_DEGREES';

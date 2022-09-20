@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import errorIcon from 'assets/error.svg'
 import { setError } from 'store/actions/weatherActions';
-import { ErrorWrap, ErrorImg, ErrorText } from 'components/ErrorLoad/components';
+import { ErrorWrap, ErrorImg, ErrorText } from 'containers/ErrorLoad/components';
 
 interface ErrorProps {
   message: string;
@@ -12,7 +12,7 @@ interface ErrorProps {
 const ErrorLoad: FC<ErrorProps> = ({ message }) => {
 
   const dispatch = useDispatch()
-  const handlerError = () => dispatch(setError())
+  const handlerError = () => dispatch(setError(''))
 
   return (
     <ErrorWrap onClick={handlerError}>

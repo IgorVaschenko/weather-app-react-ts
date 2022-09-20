@@ -1,6 +1,8 @@
 import { FC } from 'react'
-import Control from 'components/Control';
+
+import Control from 'containers/Control';
 import WeekWeather from 'components/WeekWeather';
+
 import { InsideBlockWrap } from 'components/InsideBlock/components';
 
 interface InsideBlockProps {

@@ -8,7 +8,7 @@ import { timeZone } from 'helpers/timeZone'
 import { actualDegrees } from 'helpers/actualDegrees'
 import { DAYS_WEEK } from 'constants/days'
 
-import { WeatherNextDay, DayWeek, Icon, Degrees } from 'components/WeekWeather/OtherDay/components'
+import { WeatherNextDay, DayWeek, Icon, Degrees } from 'containers//OtherDay/components'
 
 interface OtherDayProps {
     index: number;

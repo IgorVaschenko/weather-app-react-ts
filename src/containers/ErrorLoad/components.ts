@@ -4,7 +4,7 @@ import theme from "theme/theme";
 
 export const ErrorWrap = styled.div`
   margin: ${theme.spaces[0]}px auto;
-  height: ${theme.height[3]}vh;
+  height: ${theme.height[2]}vh;
   cursor: pointer;
 `
 export const ErrorText = styled.div`

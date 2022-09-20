@@ -1,6 +1,6 @@
 import DateTime from 'components/DateTime';
-import Search from 'components/Search/Search';
-import Region from 'components/Region';
+import Search from 'containers/Search/Search';
+import Region from 'containers/Region';
 
 import { WrapperRegion } from 'components/Info/components'
 

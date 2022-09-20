@@ -30,7 +30,7 @@ export const InsideBlockWrap = styled.div<{ idWeather: number }>`
 
     color:  ${theme.colors.textColor};
     margin: ${theme.height[0]}vh auto;
-    width: ${theme.height[7]}vw;
+    width: ${theme.height[8]}vw;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;

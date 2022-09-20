@@ -3,7 +3,7 @@ import styled from "styled-components";
 import theme from "theme/theme";
 
 export const WeatherNextDay = styled.div`
-    flex-basis: ${theme.flexBasis[4]}%;
+    flex-basis: ${theme.flexBasis[1]}%;
     display: flex;
     flex-direction: column;
     justify-content:center;

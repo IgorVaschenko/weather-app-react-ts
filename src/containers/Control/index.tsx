@@ -4,9 +4,9 @@ import { RootState } from 'store';
 import SettingsInfo from 'components/SettingsInfo';
 import Todo from 'components/Todo';
 import Loader from 'components/Loader';
-import ErrorLoad from 'components/ErrorLoad';
+import ErrorLoad from 'containers/ErrorLoad';
 
-import { UpBlock } from 'components/Control/components'
+import { UpBlock } from 'containers/Control/components'
 
 const Control = () => {
     const loading = useSelector((state: RootState) => state.weather.loading)
