@@ -6,9 +6,10 @@ import { degreeMeasure } from 'helpers/temperatureConverter'
 import { getDateComponents } from 'helpers/getDateComponents'
 import { timeZone } from 'helpers/timeZone'
 import { actualDegrees } from 'helpers/actualDegrees'
+import { noonDay } from 'helpers/noonDay'
 import { DAYS_WEEK } from 'constants/days'
 
-import { WeatherNextDay, DayWeek, Icon, Degrees } from 'containers//OtherDay/components'
+import { WeatherNextDay, DayWeek, Icon, Degrees } from 'containers/OtherDay/components'
 
 interface OtherDayProps {
     index: number;
@@ -23,15 +24,16 @@ const OtherDay: FC<OtherDayProps> = ({ index }) => {
 
     const timezone = useSelector((state: RootState) => state.weather.data?.city?.timezone) || 0
     const timeIndex = Math.ceil(getDateComponents(timezone).hours / 3)
+
     const timezoneBit = useSelector((state: RootState) => typeof (state.weather.data?.timezone) !== undefined ? state.weather.data?.timezone : 0)
     const timezoneSource = timezone ? timezone : timeZone(timezoneBit) * 3600
 
-    const iconXDay = dataBit ? dataBit.weather.icon : data?.list[index === 1 ?  index - timeIndex + 3 + 8 : index + 8].weather[0].icon || ''
+    const iconXDay = dataBit ? dataBit.weather.icon : data?.list[noonDay(timeIndex, index) < 39 ? noonDay(timeIndex, index) : 39].weather[0].icon || ''
     const degreesXDay = dataBit ? degreeMeasure(degrees, dataBit.temp) : degreeMeasure(degrees, data?.list[index === 1 ? index + 4 : index + 8].main.temp) || ''
 
     return (
         <WeatherNextDay>
-            <DayWeek>{DAYS_WEEK[getDateComponents(timezoneSource).dayPerWeek +  index ].slice(0, 3).toLocaleUpperCase()}</DayWeek>
+            <DayWeek>{DAYS_WEEK[getDateComponents(timezoneSource).dayPerWeek + index].slice(0, 3).toLocaleUpperCase()}</DayWeek>
             <Icon icon={iconXDay} />
             <Degrees>{actualDegrees(degreesXDay)}&#xb0;</Degrees>
         </WeatherNextDay>

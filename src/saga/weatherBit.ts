@@ -19,7 +19,6 @@ export function* workerWeatherBit() {
         yield put(setWeather(res.data))
         yield localStorage.setItem(res.data.city_name + `-weatherBit`, JSON.stringify(res.data));
     } catch (err: any) {
-        console.log('err', err);
         yield put(setError(err.message))
     }
 }

@@ -1,8 +1,7 @@
 import {createGlobalStyle} from "styled-components"
 
-
-import theme from './theme'
-import bgImage from '../assets/bg_large.jpg'
+import bg from 'assets/bg.jpg'
+import theme from 'theme/theme'
 
 export default createGlobalStyle`
   * {
@@ -10,28 +9,12 @@ export default createGlobalStyle`
     padding: 0;
     font-family: ${theme.font};
   }
-
   html{
-    background-image: url(${bgImage});
+    background-image: url(${bg});
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    
-
-    @media (max-width: 550) {
-
-    }
-    @media (max-width: 768) {
-
-    }
-    @media (max-width: 992) {
-
-    }
-    @media (max-width: 1200) {
-
-    }
   }
-
   body {
     & > #root {
       width: 100%;

@@ -9,7 +9,7 @@ export function* workerGetWeatherByStartPosition() {
         const position: PositionProps = yield call(getPosition)
         const { data }: ResponseGenerator = yield call(getOpenWeather, position.data.city)
         yield put(setWeather(data))
-        localStorage.setItem(data.city.name.toLowerCase() + `-openWeather`, JSON.stringify(data));
+        yield localStorage.setItem(data.city.name.toLowerCase() + `-openWeather`, JSON.stringify(data));
     } catch (err: any) {
         yield  put(setError(err.message))
     }

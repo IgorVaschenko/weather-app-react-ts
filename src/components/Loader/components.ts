@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import {BallTriangle} from 'react-loader-spinner'
+import {MutatingDots} from 'react-loader-spinner'
 
 import theme from "theme/theme";
 
-export const Loader = styled(BallTriangle)`
+export const Loader = styled(MutatingDots)`
   margin: auto;
 `
 export const LoaderWrap = styled.div`

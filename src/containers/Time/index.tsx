@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 
-import { TimeBlock, Timer } from 'containers/Time/components';
 import { getDateComponents } from 'helpers/getDateComponents';
 import { timeZone } from 'helpers/timeZone';
 import { RootState } from 'store';
 
+import { TimeBlock, Timer } from 'containers/Time/components';
 
 const Time = () => {
     const timezone = useSelector((state: RootState) => state.weather.data?.city?.timezone) || 0

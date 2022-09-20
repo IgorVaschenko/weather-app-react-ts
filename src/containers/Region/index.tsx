@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { RootState } from 'store'
-import { countries } from 'constants/countries'
+import { regionName } from 'helpers/regionName'
 
 import { RegionBlock, City, Country } from 'containers/Region/components'
 
@@ -17,7 +17,7 @@ const Region = () => {
     return (
         <RegionBlock>
             <City>{countryName}</City>
-            <Country>{countries[countryCode]}</Country>
+            <Country>{regionName.of(countryCode)}</Country>
         </RegionBlock>
     );
 }

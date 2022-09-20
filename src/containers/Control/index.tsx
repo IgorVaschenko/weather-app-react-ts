@@ -11,6 +11,7 @@ import { UpBlock } from 'containers/Control/components'
 const Control = () => {
     const loading = useSelector((state: RootState) => state.weather.loading)
     const error = useSelector((state: RootState) => state.weather.error)
+
     return (
         <UpBlock>
             <SettingsInfo />

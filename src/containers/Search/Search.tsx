@@ -12,10 +12,12 @@ const Search: FC = () => {
 
     const source = useSelector((state: RootState) => state.weather.source)
     const beginCity = useSelector((state: RootState) => state.weather.data?.city ? state.weather.data?.city.name : state.weather.data?.city_name)
+    const error = useSelector((state: RootState) => state.weather.error)
 
     const [city, setCity] = useState('')
 
     useEffect(() => {
+        dispatch(setLoading())
         dispatch(getWeatherPosition())
     }, [])
 
@@ -29,11 +31,11 @@ const Search: FC = () => {
 
     const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        dispatch(setCurrentCity(city))
         dispatch(setLoading())
-        dispatch(setError(''))
+        dispatch(setCurrentCity(city))
         dispatch(source ? getOpenWeather() : getWeatherBit())
         setCity(city)
+        dispatch(setError(''))
     }
     return (
         <SearchForm onSubmit={submitHandler}>

@@ -1,0 +1,1 @@
+export const noonDay = (timeIndex: number, index: number) => 40 - (40 - (8 - timeIndex)) + 5 + 8 * (index - 1)

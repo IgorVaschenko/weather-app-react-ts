@@ -10,8 +10,7 @@ const initialState: WeatherState = {
     city: '',
 }
 
-export default (state = initialState, action: WeatherAction): WeatherState => {
-    
+export default (state = initialState, action: WeatherAction): WeatherState => {    
     switch (action.type) {
         case GET_WEATHER:
             return {

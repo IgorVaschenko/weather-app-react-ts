@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import errorIcon from 'assets/error.svg'
 import { setError } from 'store/actions/weatherActions';
+
 import { ErrorWrap, ErrorImg, ErrorText } from 'containers/ErrorLoad/components';
 
 interface ErrorProps {

@@ -8,8 +8,9 @@ export default () => {
       <Loader
         height={LOADER_SIZE}
         width={LOADER_SIZE}
-        color="white"
+        color="#AC5843"
         ariaLabel="loading"
+        secondaryColor='gray'
       />
     </LoaderWrap>
   )
