@@ -22,8 +22,8 @@ const App = () => {
   
   return (
     <>
-      <InsideBlock idWeather={actualBgWeather} timesOfDay={getDateComponents(timezoneSource).hours}/>
-      <GlobalStyles />
+      <InsideBlock/>
+      <GlobalStyles idWeather={actualBgWeather} timesOfDay={getDateComponents(timezoneSource).hours}/>
     </>
   );
 }

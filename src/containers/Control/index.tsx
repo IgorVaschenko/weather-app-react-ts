@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import { RootState } from 'store';
 import SettingsInfo from 'components/SettingsInfo';
-import Todo from 'components/Todo';
+import Todo from 'containers/Todo';
 import Loader from 'components/Loader';
 import ErrorLoad from 'containers/ErrorLoad';
 

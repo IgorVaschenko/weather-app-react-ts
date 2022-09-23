@@ -33,9 +33,9 @@ const Search: FC = () => {
         e.preventDefault()
         dispatch(setLoading())
         dispatch(setCurrentCity(city))
+        dispatch(setError(''))
         dispatch(source ? getOpenWeather() : getWeatherBit())
         setCity(city)
-        dispatch(setError(''))
     }
     return (
         <SearchForm onSubmit={submitHandler}>

@@ -7,7 +7,7 @@ import { getDateComponents } from 'helpers/getDateComponents'
 import { timeZone } from 'helpers/timeZone'
 import { actualDegrees } from 'helpers/actualDegrees'
 import { noonDay } from 'helpers/noonDay'
-import { DAYS_WEEK } from 'constants/days'
+import { DAYS_WEEK, HOURS_IN_SECONDS, HOURS_REQUEST } from 'constants/days'
 
 import { WeatherNextDay, DayWeek, Icon, Degrees } from 'containers/OtherDay/components'
 
@@ -23,13 +23,14 @@ const OtherDay: FC<OtherDayProps> = ({ index }) => {
     const dataBit = useSelector((state: RootState) => state.weather.data?.data ? state.weather.data?.data[index] : '')
 
     const timezone = useSelector((state: RootState) => state.weather.data?.city?.timezone) || 0
-    const timeIndex = Math.ceil(getDateComponents(timezone).hours / 3)
+    const timeIndex = Math.ceil(getDateComponents(timezone).hours / HOURS_REQUEST)
 
     const timezoneBit = useSelector((state: RootState) => typeof (state.weather.data?.timezone) !== undefined ? state.weather.data?.timezone : 0)
-    const timezoneSource = timezone ? timezone : timeZone(timezoneBit) * 3600
 
-    const iconXDay = dataBit ? dataBit.weather.icon : data?.list[noonDay(timeIndex, index) < 39 ? noonDay(timeIndex, index) : 39].weather[0].icon || ''
-    const degreesXDay = dataBit ? degreeMeasure(degrees, dataBit.temp) : degreeMeasure(degrees, data?.list[index === 1 ? index + 4 : index + 8].main.temp) || ''
+    const timezoneSource = timezone ? timezone : timeZone(timezoneBit) * HOURS_IN_SECONDS
+
+    const iconXDay = dataBit ? dataBit.weather.icon : data?.list[noonDay(timeIndex, index)].weather[0].icon || ''
+    const degreesXDay = dataBit ? degreeMeasure(degrees, dataBit.temp) : degreeMeasure(degrees, data?.list[noonDay(timeIndex, index)].main.temp) || ''
 
     return (
         <WeatherNextDay>

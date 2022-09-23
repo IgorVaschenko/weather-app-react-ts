@@ -2,5 +2,5 @@ import styled from "styled-components";
 
 
 export const DateTimeBlock = styled.div`
-    flex-basis: 30%;
+    flex-basis: 33%;
 `

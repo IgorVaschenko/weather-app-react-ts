@@ -10,6 +10,7 @@ export const SearchForm = styled.form`
 
   @media (max-width: 776px) {
     margin: ${theme.spaces[3]}px ${theme.spaces[0]}px ; 
+    order: -1;
   }
 `;
 export const SearchInput = styled.input`

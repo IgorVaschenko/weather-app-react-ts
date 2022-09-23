@@ -53,6 +53,7 @@ export interface WeatherData {
         country: string;
         timezone: number;
     }
+    saveTime: string;
 }
 
 export interface WeatherError {

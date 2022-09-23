@@ -4,7 +4,6 @@ import Time from 'containers/Time';
 import { DateTimeBlock } from 'components/DateTime/components';
 
 const DateTime = () => {
-
     return (
         <DateTimeBlock>
             <Time />

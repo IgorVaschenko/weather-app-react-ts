@@ -1,6 +1,8 @@
+import theme from 'theme/theme'
+
 import { Loader, LoaderWrap } from 'components/Loader/components'
 
-const LOADER_SIZE = 100
+const LOADER_SIZE = 150
 
 export default () => {
   return (
@@ -8,9 +10,8 @@ export default () => {
       <Loader
         height={LOADER_SIZE}
         width={LOADER_SIZE}
-        color="#AC5843"
-        ariaLabel="loading"
-        secondaryColor='gray'
+        color={theme.colors.firstLoader}
+        secondaryColor={theme.colors.secondtLoader}
       />
     </LoaderWrap>
   )

@@ -11,7 +11,7 @@ export const ToggleBlock = styled.div`
     margin-top: ${theme.spaces[3]}px;
 
     @media (max-width: 620px) {
-        font-size: ${theme.fontSize[1]}rem;
+        margin-top: ${theme.spaces[3]}px;
         align-items: flex-start;
         flex-wrap: wrap;
     }
@@ -21,8 +21,10 @@ export const ToggleSource = styled.div`
     margin: ${theme.spaces[3]}px;
 
     @media (max-width: 620px) {
-        margin: ${theme.spaces[3]}px auto;
+        margin: ${theme.spaces[1]}px auto;
         padding-right:${theme.spaces[5]}px;
+        flex-direction: column;
+        justify-content:center;
     }
 `;
 export const ToggleSwitch = styled.div`
@@ -34,8 +36,10 @@ export const LabelInfoLeft = styled.div<{ pointer: boolean }>`
     font-weight:${(({ pointer }) => pointer ? '700' : '500')};
     font-size:${(({ pointer }) => pointer ? '1.1rem' : '1.3rem')};
 
-    @media (max-width: 420px) {
-        font-size:${(({ pointer }) => pointer ? '0.75rem' : '0.8rem')};
+    @media (max-width: 620px) {
+        font-size:${(({ pointer }) => pointer ? '0.9rem' : '1rem')};
+        margin-bottom: ${theme.spaces[1]}px;
+        margin-right: ${theme.spaces[0]}px;
     }
 `;
 export const LabelInfoRight = styled.div<{ pointer: boolean }>`
@@ -44,8 +48,10 @@ export const LabelInfoRight = styled.div<{ pointer: boolean }>`
     color:${(({ pointer }) => pointer ? '#CE723B' : 'none')};
     font-size:${(({ pointer }) => pointer ? '1.1rem' : '1.3rem')};
     font-weight:${(({ pointer }) => pointer ? '700' : '500')};
-    @media (max-width: 420px) {
-        font-size:${(({ pointer }) => pointer ? '0.75rem' : '0.8rem')};
+    @media (max-width: 620px) {
+        font-size:${(({ pointer }) => pointer ? '0.9rem' : '1rem')};
+        margin-right: ${theme.spaces[3]}px;
+        margin-top: ${theme.spaces[1]}px;
     }
 `;
 export const ToggleLabel = styled.label`

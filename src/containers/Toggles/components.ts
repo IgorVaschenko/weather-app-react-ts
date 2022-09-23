@@ -8,8 +8,12 @@ export const ToggleBlock = styled.div`
     justify-content:flex-end;
     flex-direction: row;
 
-    @media (max-width: 620px) {.
+    @media (max-width: 900px) {
+        margin-top: ${theme.spaces[15]}px;
         align-content: center;
+    }
+    @media (max-width: 620px) {
+        margin-top: ${theme.spaces[2]}px;
         flex-wrap: wrap;
     }
 `;

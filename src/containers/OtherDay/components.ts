@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { FIRST_SOURCE_ICON, SECOND_SOURCE_ICON } from "constants/api";
 import theme from "theme/theme";
 
 export const WeatherNextDay = styled.div`
@@ -16,13 +17,13 @@ export const WeatherNextDay = styled.div`
 `;
 export const Icon = styled.div <{ icon: string }> `
     background-image:${({ icon }) => icon.length === 3
-        ? `url(http://openweathermap.org/img/wn/${icon}@2x.png)`
-        : `url(https://www.weatherbit.io/static/img/icons/${icon}.png)`
+        ? `${FIRST_SOURCE_ICON}${icon}@2x.png)`
+        : `${SECOND_SOURCE_ICON}${icon}.png)`
     };
     width: ${theme.width[7]}px;
-    height: ${theme.height[7]}px;
-    background-size: cover;
+    height: ${theme.height[5]}px;
     background-position: center center;
+    background-size: cover;
 `
 export const Degrees = styled.div`
     font-size: ${theme.fontSize[3]}rem;

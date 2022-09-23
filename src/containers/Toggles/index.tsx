@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { setSourceWeather, } from "store/actions/weatherActions";
 import { setDegrees } from "store/actions/toggleActions";
 import Toggle from "components/Toggle";
+import { FIRST_WEATHER_SOURCE, SECOND_WEATHER_SOURCE } from "constants/days";
 
 import { ToggleBlock } from 'containers/Toggles/components'
 
@@ -27,8 +28,8 @@ const Toggles = () => {
     return (
         <ToggleBlock >
             <Toggle
-                nameLeft='Openweather'
-                nameRight='WeatherBit'
+                nameLeft={FIRST_WEATHER_SOURCE}
+                nameRight={SECOND_WEATHER_SOURCE}
                 pointer={source}
                 onClick={handlerSource}
             />

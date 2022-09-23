@@ -2,18 +2,15 @@ import { FC } from 'react'
 
 import Control from 'containers/Control';
 import WeekWeather from 'components/WeekWeather';
+import SignIn from 'containers/SignIn';
 
 import { InsideBlockWrap, OutsideBlock } from 'components/InsideBlock/components';
 
-interface InsideBlockProps {
-    idWeather: number;
-    timesOfDay: number;
-}
-
-const InsideBlock: FC<InsideBlockProps> = ({ idWeather, timesOfDay }) => {
+const InsideBlock: FC = () => {
     return (
-        <OutsideBlock idWeather={idWeather} timesOfDay={timesOfDay}>
+        <OutsideBlock>
             <InsideBlockWrap>
+                <SignIn />
                 <Control />
                 <WeekWeather />
             </InsideBlockWrap>

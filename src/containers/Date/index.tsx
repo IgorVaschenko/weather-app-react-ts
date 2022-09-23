@@ -15,8 +15,8 @@ const Date = () => {
 
     return (
         <DateBlock>
-            <DayToday>{DAYS_WEEK[getDateComponents(timezoneSource).dayPerWeek]}</DayToday>
-            <DateToday>{`, ${getDateComponents(timezoneSource).dateNow} ${MONTHS[getDateComponents(timezoneSource).month]} ${getDateComponents(timezoneSource).year}`}
+            <DayToday>{DAYS_WEEK[getDateComponents(timezoneSource).dayPerWeek]}&nbsp;</DayToday>
+            <DateToday>{`${getDateComponents(timezoneSource).dateNow} ${MONTHS[getDateComponents(timezoneSource).month]} ${getDateComponents(timezoneSource).year}`}
             </DateToday>
         </DateBlock>
     );

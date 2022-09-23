@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { FIRST_SOURCE_ICON, SECOND_SOURCE_ICON } from "constants/api";
 import theme from "theme/theme";
 
 export const WeatherToday = styled.div`
@@ -15,12 +16,14 @@ export const WeatherToday = styled.div`
 `;
 export const IconToday = styled.div <{ icon: string }> `
     background-image:${({ icon }) => icon.length === 3
-        ? `url(http://openweathermap.org/img/wn/${icon}@2x.png)`
-        : `url(https://www.weatherbit.io/static/img/icons/${icon}.png)`
+        ? `${FIRST_SOURCE_ICON}${icon}@2x.png)`
+        : `${SECOND_SOURCE_ICON}${icon}.png)`
     };
     flex-basis:${theme.flexBasis[7]}%;
     height: ${theme.height[9]}px;
-    background-size: cover;
+    
+    background-size: 65%;
+    background-repeat: no-repeat;
     background-position: center center;
 
     @media (max-width: 780px) {
