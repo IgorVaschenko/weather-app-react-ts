@@ -56,7 +56,9 @@ const Todo = () => {
                     const data: ArrayProps = snapshot.val();
                     if (data !== null) {
                         Object.values(data).map(todo => {
-                            setTodos(oldValues => [...oldValues.filter(value => value.date === date), todo])
+                            todo.date === date
+                                ? setTodos(oldValues => [...oldValues, todo])
+                                : remove(ref(db, `/${auth.currentUser?.uid}/${todo.uidd}`))
                         })
                     }
                 })
@@ -104,13 +106,14 @@ const Todo = () => {
         setAddEvent(!addEvent)
     }
 
+
     return (
         <>
             {
                 isUserSignedIn
                     ? <TodoBlock>
                         {!todos.length && <AddEventButton onClick={handlerAddForm} />}
-                        {(addEvent ?? !todos.length) &&
+                        {(addEvent || todos.length !== 0) &&
                             <EventAddForm show={addEvent} onSubmit={writeTodoDatabase}>
                                 <AddButton>Add</AddButton>
                                 <TimeInput
@@ -131,7 +134,7 @@ const Todo = () => {
                                     </EventConfirm>
                                 }
                             </EventAddForm>
-                       }
+                        }
                         {todos.sort(byTime()).length ?
                             <EventList>
                                 {todos.map(todo => (

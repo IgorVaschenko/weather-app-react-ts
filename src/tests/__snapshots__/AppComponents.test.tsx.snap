@@ -1,0 +1,372 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Should render correctly 1`] = `
+<div>
+  <div
+    class="sc-gFGZVQ jCxsYF"
+  >
+    <div
+      class="sc-lbOyJj bQjjHE"
+    >
+      <button
+        class="sc-ehmTmK btIDGY"
+      >
+        LOG OUT
+      </button>
+      <div
+        class="sc-jOrMOR jFTBpo"
+      >
+        <div
+          class="sc-dIouRR gTkoDI"
+        >
+          <div
+            class="sc-idiyUo auRVj"
+          >
+            <div
+              class="sc-evZas iPLDI"
+            >
+              <div
+                class="sc-ksZaOG clqMBY"
+              >
+                Openweather
+              </div>
+              <div
+                class="sc-breuTD cTWReb"
+              >
+                <label
+                  class="sc-fnykZs htfJrF"
+                >
+                  <input
+                    class="sc-bjUoiL ToSVL"
+                    type="checkbox"
+                  />
+                  <span
+                    class="sc-fEOsli iEUegb"
+                  />
+                </label>
+              </div>
+              <div
+                class="sc-hAZoDl eGGtyQ"
+              >
+                WeatherBit
+              </div>
+            </div>
+            <div
+              class="sc-evZas iPLDI"
+            >
+              <div
+                class="sc-ksZaOG clqMBY"
+              >
+                C °
+              </div>
+              <div
+                class="sc-breuTD cTWReb"
+              >
+                <label
+                  class="sc-fnykZs htfJrF"
+                >
+                  <input
+                    class="sc-bjUoiL ToSVL"
+                    type="checkbox"
+                  />
+                  <span
+                    class="sc-fEOsli iEUegb"
+                  />
+                </label>
+              </div>
+              <div
+                class="sc-hAZoDl eGGtyQ"
+              >
+                F °
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-iqcoie lloXUC"
+          >
+            <div
+              class="sc-jSMfEi cpQpzT"
+            >
+              <div
+                class="sc-hKMtZM bcrKGA"
+              >
+                <div
+                  class="sc-eCYdqJ gafvgz"
+                >
+                  03:52
+                </div>
+              </div>
+              <div
+                class="sc-bczRLJ euAnxl"
+              >
+                <div
+                  class="sc-gsnTZi LYEDa"
+                >
+                  Monday
+                   
+                </div>
+                <div
+                  class="sc-dkzDqf RAfhd"
+                >
+                  26 September 2022
+                </div>
+              </div>
+            </div>
+            <form
+              class="sc-gKXOVf VqfqD"
+            >
+              <input
+                class="sc-iBkjds eeMINy"
+                placeholder="enter city"
+                value=""
+              />
+              <button
+                class="sc-ftvSup lmWQjq"
+              >
+                Search
+              </button>
+            </form>
+            <div
+              class="sc-papXJ gAYypr"
+            >
+              <div
+                class="sc-jqUVSM fHFsML"
+              />
+              <div
+                class="sc-kDDrLX VzXzM"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-iTONeN JdmbY"
+        >
+          <div
+            aria-busy="true"
+            aria-label="mutating-dots-loading"
+            data-testid="mutating-dots-loading"
+            role="status"
+            style="display: flex;"
+          >
+            <svg
+              data-testid="mutating-dots-svg"
+              height="150"
+              id="goo-loader"
+              width="150"
+            >
+              <filter
+                id="fancy-goo"
+              >
+                <fegaussianblur
+                  in="SourceGraphic"
+                  result="blur"
+                  stdDeviation="6"
+                />
+                <fecolormatrix
+                  in="blur"
+                  mode="matrix"
+                  result="goo"
+                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                />
+                <fecomposite
+                  in="SourceGraphic"
+                  in2="goo"
+                  operator="atop"
+                />
+              </filter>
+              <g
+                filter="url(#fancy-goo)"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  attributeType="XML"
+                  dur="1.2s"
+                  from="0 50 50"
+                  id="mainAnim"
+                  repeatCount="indefinite"
+                  to="359 50 50"
+                  type="rotate"
+                />
+                <circle
+                  cx="50%"
+                  cy="40"
+                  fill="#AC5843"
+                  r="12.5"
+                >
+                  <animate
+                    attributeName="cy"
+                    attributeType="XML"
+                    begin="0;cAnim1.end+0.2s"
+                    calcMode="spline"
+                    dur="0.6s"
+                    id="cAnim1"
+                    keySplines="0.09, 0.45, 0.16, 1;0.09, 0.45, 0.16, 1"
+                    keyTimes="0;0.3;1"
+                    values="40;20;40"
+                  />
+                </circle>
+                <circle
+                  cx="50%"
+                  cy="60"
+                  fill="#858585"
+                  r="12.5"
+                >
+                  <animate
+                    attributeName="cy"
+                    attributeType="XML"
+                    begin="0.4s;cAnim2.end+0.2s"
+                    calcMode="spline"
+                    dur="0.6s"
+                    id="cAnim2"
+                    keySplines="0.09, 0.45, 0.16, 1;0.09, 0.45, 0.16, 1"
+                    keyTimes="0;0.3;1"
+                    values="60;80;60"
+                  />
+                </circle>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-iNWwEs bjrfON"
+      >
+        <div
+          class="sc-jfmDQi jqOSuF"
+        >
+          <div
+            class="sc-kgUAyh fbqPdt"
+          >
+            <div
+              class="sc-hTtwUo jZDLpF"
+            />
+            <div
+              class="sc-lbxAil drqebZ"
+            >
+              <div
+                class="sc-gSAPjG jGzqRr"
+              >
+                TODAY
+              </div>
+              <div
+                class="sc-jgbSNz LHnnX"
+              >
+                0
+                °
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-dPyBCJ hJdjTS"
+          >
+            <div
+              class="sc-BeQoi leeoRb"
+            >
+              TUE
+            </div>
+            <div
+              class="sc-bBXxYQ ixnERY"
+            />
+            <div
+              class="sc-cOFTSb ivtCVF"
+            >
+              0
+              °
+            </div>
+          </div>
+          <div
+            class="sc-dPyBCJ hJdjTS"
+          >
+            <div
+              class="sc-BeQoi leeoRb"
+            >
+              WED
+            </div>
+            <div
+              class="sc-bBXxYQ ixnERY"
+            />
+            <div
+              class="sc-cOFTSb ivtCVF"
+            >
+              0
+              °
+            </div>
+          </div>
+          <div
+            class="sc-dPyBCJ hJdjTS"
+          >
+            <div
+              class="sc-BeQoi leeoRb"
+            >
+              THU
+            </div>
+            <div
+              class="sc-bBXxYQ ixnERY"
+            />
+            <div
+              class="sc-cOFTSb ivtCVF"
+            >
+              0
+              °
+            </div>
+          </div>
+          <div
+            class="sc-dPyBCJ hJdjTS"
+          >
+            <div
+              class="sc-BeQoi leeoRb"
+            >
+              FRI
+            </div>
+            <div
+              class="sc-bBXxYQ ixnERY"
+            />
+            <div
+              class="sc-cOFTSb ivtCVF"
+            >
+              0
+              °
+            </div>
+          </div>
+          <div
+            class="sc-dPyBCJ hJdjTS"
+          >
+            <div
+              class="sc-BeQoi leeoRb"
+            >
+              SAT
+            </div>
+            <div
+              class="sc-bBXxYQ ixnERY"
+            />
+            <div
+              class="sc-cOFTSb ivtCVF"
+            >
+              0
+              °
+            </div>
+          </div>
+          <div
+            class="sc-dPyBCJ hJdjTS"
+          >
+            <div
+              class="sc-BeQoi leeoRb"
+            >
+              SUN
+            </div>
+            <div
+              class="sc-bBXxYQ ixnERY"
+            />
+            <div
+              class="sc-cOFTSb ivtCVF"
+            >
+              0
+              °
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

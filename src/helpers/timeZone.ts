@@ -1,4 +1,4 @@
-export const timeZone = (timezone: string) => {    
+export const timeZone = (timezone: string = 'Europe/Minsk') => {    
     const date = new Date()
     const formatter = new Intl.DateTimeFormat('en-US', {
         timeZone: timezone,

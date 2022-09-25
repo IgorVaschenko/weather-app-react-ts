@@ -1,8 +1,7 @@
 import {createGlobalStyle} from "styled-components"
 
-import bg from 'assets/bg.jpg'
 import theme from 'theme/theme'
-
+import bg from 'assets/bg.jpg'
 import cloudy from 'assets/cloudy.jpg'
 import fog from 'assets/fog.jpg'
 import rain from 'assets/rain.jpg'
@@ -19,7 +18,6 @@ export default createGlobalStyle<{ idWeather: number, timesOfDay: number }>`
     font-family: ${theme.font};
   }
   html{
-
     background-image:url(${(({ idWeather, timesOfDay }) => idWeather > 800
     ? cloudy
     : idWeather === 800 && (timesOfDay < 7 || timesOfDay > 20)
