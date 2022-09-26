@@ -16,7 +16,7 @@ const SignIn = () => {
 
     useEffect(() => {
         auth.onAuthStateChanged((user) => user ? setIsUserSignedIn(true) : setIsUserSignedIn(false))
-    }, [])
+    }, [auth])
 
     const signInWithGoogle = () => {
         const provider = new GoogleAuthProvider();

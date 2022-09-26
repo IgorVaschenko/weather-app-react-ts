@@ -5,7 +5,7 @@ import theme from "theme/theme";
 export const InsideBlockWrap = styled.div`
     color:  ${theme.colors.textColor};
     margin: ${theme.insideBlockMar[1]}vh auto;
-    width: ${theme.height[8]}vw;
+    width: ${theme.width[8]}vw;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;

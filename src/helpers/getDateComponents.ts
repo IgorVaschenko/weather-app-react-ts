@@ -1,7 +1,9 @@
+import { MS_IN_SECOND, SECOND_IN_MINUTE } from "constants/days"
+
 export function getDateComponents(timezone: number) {
     const targetDate = new Date()
-    const timestamp = targetDate.getTime() / 1000 + targetDate.getTimezoneOffset() * 60
-    const date = new Date((timestamp + timezone) * 1000)
+    const timestamp = targetDate.getTime() / MS_IN_SECOND + targetDate.getTimezoneOffset() * SECOND_IN_MINUTE
+    const date = new Date((timestamp + timezone) * MS_IN_SECOND)
 
     return {
         date,

@@ -20,14 +20,31 @@ const top = keyframes`
     70% { opacity: 0.5;}
     100% {opacity: 1; transform: translateY(0);}
 `;
-
+const red = keyframes`
+    0% { box-shadow: none}
+    10% {box-shadow: 0 0 15px red}
+    20% { box-shadow: none}
+    30% {box-shadow: 0 0 15px red}
+    40% {box-shadow: none}
+    50% {box-shadow: 0 0 15px red}
+    60% {box-shadow: none}
+    70% {box-shadow: 0 0 15px red}
+    80% {box-shadow: none}
+    90% {box-shadow: 0 0 15px red}
+    100% {box-shadow: none}
+`;
 
 export const TodoBlock = styled.div`
-    margin-left: ${theme.spaces[3]}px;
-    min-height: ${theme.height[14]}vh;
+    margin-left: ${theme.spaces[12]}px;
+    height: ${theme.height[14]}vh;
     animation-name: ${top};
     animation-duration: ${theme.time[1]}s;
+    overflow-y: scroll; 
     position: relative;
+
+    @media (max-width: 620px) {
+        margin-left: ${theme.spaces[0]}px;
+    }
 `;
 export const AddEventButton = styled.button`
     width: ${theme.width[2]}px;
@@ -46,16 +63,24 @@ export const AddEventButton = styled.button`
     }
 `;
 
-
-
-export const EventAddForm = styled.form<{ show: boolean }>`
+export const EventAddForm = styled.form`
+    width:  100%;
     display: flex;      
     margin-top: ${theme.spaces[5]}px;
+    margin-left:60px;
     animation-duration: ${theme.time[2]}s;
     animation-name:${rightIn};
 
+    @media (max-width: 920px) {
+        margin: 20px auto;
+        width:  80%;
+    }
     @media (max-width: 620px) {
         flex-wrap: wrap;
+        margin: 0 auto;
+        width:  none;
+    }
+    @media (max-width: 420px) {
     }
 `;
 export const EventEmpty = styled.div<{ show: boolean }>` 
@@ -67,7 +92,6 @@ export const EventEmpty = styled.div<{ show: boolean }>`
     }
 `;
 export const AddButton = styled.button`
-    width:  ${theme.width[8]}px;
     border-radius: ${theme.spaces[5]}px 0 0 ${theme.spaces[5]}px;
     font-size: ${theme.fontSize[1]}rem;
     font-weight: ${theme.fontWeight[2]};
@@ -83,6 +107,10 @@ export const AddButton = styled.button`
         opacity:${theme.opacity[5]}
     }
 
+    @media (max-width: 920px) {
+        flex-basis: ${theme.flexBasis[5]}%;
+    }
+
     @media (max-width: 620px) {
         flex-basis: ${theme.flexBasis[12]}%;
         border-radius: ${theme.spaces[5]}px;
@@ -91,8 +119,7 @@ export const AddButton = styled.button`
     }
 `;
 
-export const TextInput = styled.input<{ isConfirmButton: boolean }>`
-    width: ${theme.width[10]}px;
+export const TextInput = styled.input<{ isConfirmButton: boolean; isEmpty: boolean }>`
     flex-basis: ${theme.flexBasis[5]}%;
     font-size: ${theme.fontSize[1]}rem;
     font-weight: ${theme.fontWeight[2]};
@@ -101,6 +128,8 @@ export const TextInput = styled.input<{ isConfirmButton: boolean }>`
     background: ${theme.colors.backgroundInput};  
     color:${theme.colors.textColor};
     border-radius:${(({ isConfirmButton }) => isConfirmButton ? `0` : `0 ${theme.spaces[5]}px  ${theme.spaces[5]}px 0`)}; 
+    animation-name: ${(({ isEmpty }) => isEmpty ? red : `none`)}; 
+    animation-duration: ${theme.time[4]}s;
     outline: none;
     border: none;
     cursor:pointer;
@@ -117,12 +146,21 @@ export const TextInput = styled.input<{ isConfirmButton: boolean }>`
         box-shadow: 0 0 15px #2196F3
     }
 
+    @media (max-width: 920px) {
+        flex-basis: ${theme.flexBasis[12]}%;
+    }
+
     @media (max-width: 620px) {
         border-radius:0 ${theme.spaces[5]}px ${theme.spaces[5]}px 0;
         flex-basis: ${theme.flexBasis[8]}%;
         order:-1;
         margin:5px auto 5px 0;
     }
+
+    @media (max-width: 620px) {
+        width:100%;
+    }
+    
     @media (max-width: 310px) {
         border-radius: ${theme.spaces[5]}px;
         flex-basis: ${theme.flexBasis[11]}%;
@@ -134,7 +172,6 @@ export const TimeInput = styled.input`
     font-size: ${theme.fontSize[1]}rem;
     font-weight: ${theme.fontWeight[2]};
     padding: ${theme.spaces[2]}px;
-    width:  ${theme.width[8]}px;
     background: ${theme.colors.backgroundDown};
     color:${theme.colors.textColor};
     outline: none;
@@ -148,12 +185,21 @@ export const TimeInput = styled.input`
         opacity:${theme.opacity[7]}
     }
 
+    @media (max-width: 920px) {
+        flex-basis: ${theme.flexBasis[5]}%;
+    }
+
     @media (max-width: 620px) {
         margin:${theme.spaces[1]}px 0 ${theme.spaces[1]}px auto ;
         order:-1;
         border-radius: ${theme.spaces[5]}px 0 0 ${theme.spaces[5]}px;
         flex-basis: ${theme.flexBasis[5]}%;
     }
+
+    @media (max-width: 420px) {
+        flex-basis: ${theme.flexBasis[4]}%;
+    }
+
     @media (max-width: 310px) {
         border-radius: ${theme.spaces[5]}px;
         flex-basis: ${theme.flexBasis[11]}%;
@@ -189,15 +235,13 @@ export const EventConfirm = styled.div`
     }
 `;
 
-
-
 export const EventList = styled.div`
     display:flex;
     flex-direction:column;
     justify-content: flex-start;
 `;
 export const EventItem = styled.div`
-    margin: ${theme.spaces[3]}px ${theme.spaces[4]}px;
+    margin: ${theme.spaces[2]}px ${theme.spaces[4]}px;
     min-height: ${theme.height[2]}px;
     display:flex;
 `;
@@ -221,6 +265,8 @@ export const EventOperations = styled.div`
 export const EventUpdate = styled.button`
     width: ${theme.width[2]}px;
     height: ${theme.height[2]}px;
+    margin:${theme.spaces[1]}px;
+    margin-left:${theme.spaces[3]}px;
     background-image:url(${update});
     background-color:inherit;
     background-repeat: no-repeat;
@@ -229,12 +275,13 @@ export const EventUpdate = styled.button`
     outline:none;
 
     &:hover  {
-        opacity:${theme.opacity[5]}
+        opacity:${theme.opacity[5]};
     }
 `;
 export const EventDelete = styled.button`
-    width: ${theme.width[2]}px;
-    height: ${theme.height[2]}px;
+    width: ${theme.spaces[6]}px;
+    height: ${theme.spaces[6]}px;
+    margin:${theme.spaces[1]}px;
     background-image:url(${del});
     background-color:inherit;
     background-repeat: no-repeat;
@@ -243,6 +290,6 @@ export const EventDelete = styled.button`
     outline:none;
 
     &:hover  {
-        opacity:${theme.opacity[5]}
+        opacity:${theme.opacity[5]};
     }
 `;

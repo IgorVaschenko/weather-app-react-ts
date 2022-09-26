@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { setSourceWeather, } from "store/actions/weatherActions";
+import { getOpenWeather, getWeatherBit, setLoading, setSourceWeather, } from "store/actions/weatherActions";
 import { setDegrees } from "store/actions/toggleActions";
 import Toggle from "components/Toggle";
 import { FIRST_WEATHER_SOURCE, SECOND_WEATHER_SOURCE } from "constants/days";
@@ -17,6 +17,8 @@ const Toggles = () => {
 
     const handlerSource = () => {
         dispatch(setSourceWeather(source))
+        dispatch(setLoading())
+        dispatch(source ? getOpenWeather() : getWeatherBit())
         setSource(!source)
     }
 

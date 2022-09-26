@@ -16,8 +16,8 @@ export const WeatherToday = styled.div`
 `;
 export const IconToday = styled.div <{ icon: string }> `
     background-image:${({ icon }) => icon.length === 3
-        ? `${FIRST_SOURCE_ICON}${icon}@2x.png)`
-        : `${SECOND_SOURCE_ICON}${icon}.png)`
+        ? `${FIRST_SOURCE_ICON}${icon ? icon.slice(0, -1) + 'd' : '01d'}@2x.png)`
+        : `${SECOND_SOURCE_ICON}${icon ? icon.slice(0, -1) + 'd' : 'c01d'}.png)`
     };
     flex-basis:${theme.flexBasis[7]}%;
     height: ${theme.height[9]}px;

@@ -18,7 +18,7 @@ describe('actualDegrees', () => {
 
 describe('timeZone', () => {
     test('timeZone', () => {
-        expect(timeZone()).toEqual(8)
+        expect(timeZone()).toEqual(3)
     })
 })
 
@@ -37,7 +37,7 @@ describe('noonDay', () => {
         expect(noonDay(3, 3)).toEqual(26)
     })
     test('more', () => {
-        expect(noonDay(3, 15)).toEqual(32)
+        expect(noonDay(3, 15)).toEqual(30)
     })
 })
 

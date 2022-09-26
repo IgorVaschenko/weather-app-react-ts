@@ -1,8 +1,9 @@
 export const timeZone = (timezone: string = 'Europe/Minsk') => {    
-    const date = new Date()
+    if(timezone==='uninhabited') return 0
+    
     const formatter = new Intl.DateTimeFormat('en-US', {
         timeZone: timezone,
-        timeZoneName: 'shortOffset',
+        timeZoneName: 'short',
     })
-    return +formatter.format(date).slice(formatter.format(date).lastIndexOf('T') + 1)
+    return Number(formatter.format().slice(formatter.format().lastIndexOf('T') + 1))
 }

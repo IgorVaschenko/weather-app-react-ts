@@ -13,7 +13,7 @@ const WeekWeather: FC = () => {
         <DownBlock>
             <WeatherBlock>
                 <Today />
-                {NUMDAY.map((day, i) => (
+                {NUMDAY.map((_, i) => (
                     <OtherDay
                         key={uuidv4()}
                         index={i + 1}

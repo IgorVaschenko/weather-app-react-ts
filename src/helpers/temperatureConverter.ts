@@ -1,10 +1,13 @@
-export const fahrenheit = (temp: number) => Math.round(temp * 1.8 - 459.67) > 0 ? `+${Math.round(temp * 1.8 - 459.67)}` : `${Math.round(temp * 1.8 - 459.67)}`
+import { ABSOLUTE_NULL_CELSIUS, ABSOLUTE_NULL_FAHRENHEIT, MAX_WORLD_TEMPERATURE, ROLLING_COEF } from "constants/days"
 
-export const celsius = (temp: number) => Math.round(temp - 273.15) > 0 ? `+${Math.round(temp - 273.15)}` : `${Math.round(temp - 273.15)}`
+export const fahrenheit = (temp: number) => Math.round(temp * ROLLING_COEF - ABSOLUTE_NULL_FAHRENHEIT) > 0 ? `+${Math.round(temp * ROLLING_COEF - ABSOLUTE_NULL_FAHRENHEIT)}` : `${Math.round(temp * ROLLING_COEF - ABSOLUTE_NULL_FAHRENHEIT)}`
 
-export const degreeMeasure = (degrees: boolean, temp: number = 273) => {
-    temp = temp < 200 ? temp + 273.15 : temp
+export const celsius = (temp: number) => Math.round(temp - ABSOLUTE_NULL_CELSIUS) > 0 ? `+${Math.round(temp - ABSOLUTE_NULL_CELSIUS)}` : `${Math.round(temp - ABSOLUTE_NULL_CELSIUS)}`
+
+export const degreeMeasure = (degrees: boolean, temp: number = 0) => {
+    temp = temp < MAX_WORLD_TEMPERATURE ? temp + ABSOLUTE_NULL_CELSIUS : temp
     return degrees ? celsius(temp) : fahrenheit(temp)
 }
+
 
 
