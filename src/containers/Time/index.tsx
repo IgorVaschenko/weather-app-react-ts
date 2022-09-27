@@ -11,7 +11,7 @@ import { TimeBlock, Timer } from 'containers/Time/components';
 const Time = () => {
 
     const timezone = useSelector((state: RootState) => state.weather.data?.city?.timezone) || 0
-    const timezoneBit = useSelector((state: RootState) => typeof (!!state.weather.data?.timezone) ? state.weather.data?.timezone : 0)
+    const timezoneBit = useSelector((state: RootState) => state.weather.data?.timezone)
 
     const timezoneSource = timezone ? timezone : timeZone(timezoneBit) * HOURS_IN_SECONDS
 

@@ -22,3 +22,5 @@ export const ABSOLUTE_NULL_CELSIUS = 273.15
 export const ABSOLUTE_NULL_FAHRENHEIT = 459.67
 export const MAX_WORLD_TEMPERATURE = 80
 export const ROLLING_COEF = 1.8
+
+export const DELAY_WRONG_ADD = 3000

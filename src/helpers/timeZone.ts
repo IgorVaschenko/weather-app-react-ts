@@ -1,4 +1,5 @@
-export const timeZone = (timezone: string = 'Europe/Minsk') => {    
+export const timeZone = (timezone = 'Europe/Minsk') => {    
+    
     if(timezone==='uninhabited') return 0
     
     const formatter = new Intl.DateTimeFormat('en-US', {

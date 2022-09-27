@@ -25,7 +25,7 @@ const OtherDay: FC<OtherDayProps> = ({ index }) => {
     const timezone = useSelector((state: RootState) => state.weather.data?.city?.timezone) || 0
     const timeIndex = Math.ceil(getDateComponents(timezone).hours / HOURS_REQUEST) 
     
-    const timezoneBit = useSelector((state: RootState) => typeof (!!state.weather.data?.timezone) ? state.weather.data?.timezone : 0)
+    const timezoneBit = useSelector((state: RootState) => state.weather.data?.timezone)
     
     const timezoneSource = timezone ? timezone : timeZone(timezoneBit) * HOURS_IN_SECONDS
     

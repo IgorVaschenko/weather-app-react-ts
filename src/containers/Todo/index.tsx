@@ -6,6 +6,7 @@ import { updateUserData, deleteUserData, setUserData, initialUserData } from 'fi
 import { getTimeNow } from 'helpers/getTimeNow';
 import { byTime } from 'helpers/sortByTime';
 import { getDateNow } from 'helpers/getDateNow';
+import { DELAY_WRONG_ADD } from 'constants/days';
 
 import {
     TodoBlock, EventAddForm, AddButton,
@@ -21,7 +22,6 @@ interface ArrayProps {
     time: string;
 }
 
-export const DELAY_WRONG_ADD = 3000
 
 const Todo = () => {
 
@@ -94,7 +94,7 @@ const Todo = () => {
                                 </EventConfirm>
                             }
                         </EventAddForm>
-                        <TodoBlock>
+                        <TodoBlock countEvent={todos.length}>
                             {todos.sort(byTime()).length ?
                                 <EventList>
                                     {todos.map(todo => (

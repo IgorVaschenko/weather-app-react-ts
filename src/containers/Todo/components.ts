@@ -34,18 +34,22 @@ const red = keyframes`
     100% {box-shadow: none}
 `;
 
-export const TodoBlock = styled.div`
+export const TodoBlock = styled.div<{ countEvent?: number }>`
     margin-left: ${theme.spaces[12]}px;
     height: ${theme.height[14]}vh;
     animation-name: ${top};
     animation-duration: ${theme.time[1]}s;
-    overflow-y: scroll; 
+    overflow-y:${(({ countEvent }) => countEvent && countEvent > 4 ? 'scroll' : 'visible')}; 
     position: relative;
 
+    @media (max-width: 820px) {
+        overflow-y:${(({ countEvent }) => countEvent && countEvent > 3 ? 'scroll' : 'visible')}; 
+    }
     @media (max-width: 620px) {
         margin-left: ${theme.spaces[0]}px;
     }
 `;
+
 export const AddEventButton = styled.button`
     width: ${theme.width[2]}px;
     height: ${theme.height[2]}px;

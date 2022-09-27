@@ -21,7 +21,7 @@ const Search: FC = () => {
     useEffect(() => {
         dispatch(setLoading())
         dispatch(getWeatherPosition())
-    }, [])
+    }, [dispatch])
 
     useEffect(() => {
         beginCity && setCity(beginCity)

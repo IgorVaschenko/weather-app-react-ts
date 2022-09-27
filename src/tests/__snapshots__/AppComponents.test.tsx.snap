@@ -93,7 +93,7 @@ exports[`App Component Should render correctly 1`] = `
                 <div
                   class="sc-eCYdqJ gafvgz"
                 >
-                  23:03
+                  14:53
                 </div>
               </div>
               <div
@@ -102,13 +102,13 @@ exports[`App Component Should render correctly 1`] = `
                 <div
                   class="sc-gsnTZi LYEDa"
                 >
-                  Monday
+                  Tuesday
                    
                 </div>
                 <div
                   class="sc-dkzDqf RAfhd"
                 >
-                  26 September 2022
+                  27 September 2022
                 </div>
               </div>
             </div>
@@ -262,24 +262,6 @@ exports[`App Component Should render correctly 1`] = `
             <div
               class="sc-BeQoi leeoRb"
             >
-              TUE
-            </div>
-            <div
-              class="sc-bBXxYQ ixnERY"
-            />
-            <div
-              class="sc-cOFTSb ivtCVF"
-            >
-              0
-              °
-            </div>
-          </div>
-          <div
-            class="sc-dPyBCJ hJdjTS"
-          >
-            <div
-              class="sc-BeQoi leeoRb"
-            >
               WED
             </div>
             <div
@@ -353,6 +335,24 @@ exports[`App Component Should render correctly 1`] = `
               class="sc-BeQoi leeoRb"
             >
               SUN
+            </div>
+            <div
+              class="sc-bBXxYQ ixnERY"
+            />
+            <div
+              class="sc-cOFTSb ivtCVF"
+            >
+              0
+              °
+            </div>
+          </div>
+          <div
+            class="sc-dPyBCJ hJdjTS"
+          >
+            <div
+              class="sc-BeQoi leeoRb"
+            >
+              MON
             </div>
             <div
               class="sc-bBXxYQ ixnERY"
